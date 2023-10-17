@@ -19,7 +19,7 @@ def home():
 
 @app.route('/predict', methods=["POST"])
 def predict():
-        data = [float(x) for x in request.form.values() if x]
+        data = [int(x) for x in request.form.values() if x]
 
         # Melakukan prediksi dengan model
         prediction = model.predict([data])
