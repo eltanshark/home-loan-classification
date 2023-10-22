@@ -21,14 +21,14 @@ def home():
 def predict():
         data = [int(x) for x in request.form.values() if x]
 
-        # Melakukan prediksi dengan model
+        # Do prediction using model
         prediction = model.predict([data])
 
         # Converting binary to label
         if prediction[0] == 0 :
-            prediction_label = "Creditors are not eligible"
+            prediction_label = "Kreditur Tidak Layak Mendapatkan Kredit"
         else:
-            prediction_label = "Creditors are eligible"
+            prediction_label = "Kreditur Layak Mendapatkan Kredit"
 
         return render_template("index.html", prediction_text = prediction_label)
 
